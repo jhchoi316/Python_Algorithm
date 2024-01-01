@@ -20,8 +20,8 @@ m = M(call_time_list)
 y = Y(call_time_list)
 
 if m == y:
-    print("Y M ", m)
+    print("Y M", m)
 elif m < y:
-    print("M ", m)
+    print("M", m)
 elif m > y:
-    print("Y ", y)
+    print("Y", y)

@@ -8,8 +8,6 @@ for i in in1:
         num_count[i] += 1
     else:
         num_count[6] += 1
-    
-print(num_count)
 
 for i in range(len(num_count)):
     if i != 6 and num_count[i] > count:
