@@ -16,4 +16,3 @@ for i in range(N):
     stack.append([i, top_list[i]])  # 인덱스, 값
 
 print(" ".join(map(str, answer)))
-    
