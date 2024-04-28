@@ -1,26 +1,28 @@
-N = int(input())
-dp = [0] * 100001
+n = int(input())
 
-for i in range(2, N+1):
+dp = [0]*1000001
+
+for i in range(2,n+1):
+    # 1을 뺀 경우
     dp[i] = dp[i-1] + 1
-    
-    if i%2 == 0:
-        dp[i] = min(dp[i], dp[i//2] + 1)
-            
-    if i%3 == 0:
-        dp[i] = min(dp[i], dp[i//3] + 1)
-            
-res = [N]
-now = N
-tmp = dp[N]-1
+    # 2로 나누어 떨어지면
+    if i % 2 == 0:
+        dp[i] = min(dp[i], dp[i//2]+1)
+    # 3으로 나누어 떨어지면
+    if i % 3 == 0:
+        dp[i] = min(dp[i], dp[i//3]+1)
 
-for i in range(N,0,-1):
-    print(now, tmp, dp[i])
-    if dp[i] == tmp and (i+1 == now or i*2==now or i*3==now):
+res = [n]
+now = n
+tmp = dp[n] - 1
+
+# n부터 하나씩 줄여나가면서 순서 찾기
+for i in range(n, 0, -1):
+    if dp[i] == tmp and (i+1 == now or i*2 == now or i*3 == now):
         now = i
         res.append(i)
         tmp -= 1
-        
 
-print(dp[N])
+
+print(dp[n])
 print(*res)
