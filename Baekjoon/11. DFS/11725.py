@@ -19,7 +19,5 @@ def dfs(T):
             dfs(i)
 
 dfs(1)
-print(graph)
-print(visited)
 for i in range(2, N+1):
     print(visited[i])
