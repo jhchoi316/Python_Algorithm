@@ -2,7 +2,7 @@ import sys
 
 def dfs(start, visited, s, b):
     global SB_min
-    
+
     if b != 0:
         SB_min = min(SB_min, abs(s-b))
     

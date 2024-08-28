@@ -4,7 +4,7 @@ def dfs(start, visited, result):
     for i in range(5):
         if vowels[i] in result:
             check += 1
-    
+
     if len(result) == n and 0<check<n-1:
         print(''.join(map(str, result)))
         check = 0
