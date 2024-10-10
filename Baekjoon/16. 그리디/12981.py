@@ -1,22 +1,17 @@
-colors = list(map(int, input().split()))
-colors.sort(reverse=True)
+colors = (map(int, input().split()))
 
-min_color = colors.pop()
-cnt = min_color
-colors = [k-min_color for k in colors]
+count = 0
+tmp = []
 
-while sum(colors):
-    tmp = colors.pop()
-    
-    while tmp != 0:
-        if tmp > 2:
-            cnt += tmp//3
-            tmp %= 3
-        elif tmp == 2:
-            cnt += 1
-            tmp %= 2
-        elif tmp == 1:
-            cnt += 1
-            tmp %= 1
-            
-print(cnt)
+for c in colors:
+    q, r = c//3, c%3
+    count += q
+    if r:
+        tmp.append(r)
+
+if len(tmp) == 1:
+    count += 1
+elif len(tmp) > 1:
+    count += max(tmp)
+
+print(count)

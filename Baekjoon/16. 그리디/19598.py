@@ -1,23 +1,14 @@
-import heapq
-import sys
+import sys, heapq
 input = sys.stdin.readline
 
-n = int(input().rstrip())
-meetings = []
+N = int(input())
+schedules = sorted([list(map(int, input().split())) for _ in range(N)])
 
-for _ in range(n):
-    meetings.append(list(map(int, input().rstrip().split())))
+h = []
 
-meetings.sort(key = lambda x: x[0])
-cnt = 1
+for start, end in schedules:
+    if h and h[0] <= start:
+        heapq.heappop(h)
+    heapq.heappush(h, end)
 
-b = [0]
-
-for start ,end in a:
-    if start >= b[0]:
-        heapq.heappop(b)
-    else:
-        cnt+=1
-    heapq.heappush(b, end)
-
-print(cnt)
+print(len(h))

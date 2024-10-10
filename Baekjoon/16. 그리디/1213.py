@@ -14,6 +14,7 @@ for k, v in list(check_word.items()):
         mid = k
         if count >= 2:
             print("I'm Sorry Hansoo")
+            exit()
             
 for k, v in sorted(check_word.items()):
     result += (k * (v // 2))

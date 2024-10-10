@@ -10,7 +10,6 @@ for i in range(len(n)):
     for j in tmp:
             sum_num += int(j)
     
-    
     if i == 0:
         result += sum_num
     else:
