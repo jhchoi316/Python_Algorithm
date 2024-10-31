@@ -1,13 +1,17 @@
 group = 1
+
 while True:
     n = int(input())
     if n == 0:
         break
+    
     messages = []
     for _ in range(n):
         message = input().split()
         messages.append(message)
+        
     print(f'Group {group}')
+    
     flag = True
     for i in range(n):
         if 'N' in messages[i][1:]:
