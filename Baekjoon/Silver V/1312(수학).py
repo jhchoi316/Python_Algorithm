@@ -5,6 +5,3 @@ for i in range(n):
     result = a//b
     
 print(result)
-
-
-
