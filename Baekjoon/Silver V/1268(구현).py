@@ -14,7 +14,6 @@ answers = [0] * n
 for i, student in enumerate(students):
     answers[i] = student.count(1)
 
-
 for i in range(n):
     if answers[i] == max(answers):
         print(i+1)
