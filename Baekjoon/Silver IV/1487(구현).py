@@ -15,7 +15,7 @@ cost_set = sorted(set(cost))
 max_num = 0
 result = 0
 
-for i in cost:
+for i in cost_set:
     money = 0
     for j in range(n):
         if i <= cost[j] and i > delivery[j]:
