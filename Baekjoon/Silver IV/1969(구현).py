@@ -9,7 +9,7 @@ s = ""
 dnas = []
 
 for i in range(n):
-    data = input()
+    data = read()
     dnas.append(data)
     
 for i in range(m):
