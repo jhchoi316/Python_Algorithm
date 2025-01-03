@@ -2,7 +2,6 @@ import sys
 import math
 read = sys.stdin.readline
 
-
 N = int(read())
 
 dp = [0] * (N+1)
