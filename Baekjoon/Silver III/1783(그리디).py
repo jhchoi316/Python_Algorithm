@@ -1,0 +1,13 @@
+import sys
+read = sys.stdin.readline
+
+N, M = map(int, read().strip().split())
+
+if N == 1:
+    print(1)
+elif N == 2:
+    print(4, (M+1)//2)
+elif M <= 6:
+    print(min(4,M))
+else:
+    print(M-2)
