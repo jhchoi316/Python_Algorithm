@@ -27,7 +27,6 @@ while start <= end :
     # 현재 집에서 거리보다 크면 설치 가능
     # 작으면 설치 불가능
     for i in range(1, N):
-        print(house[i], cur_house+mid)
         if house[i] >= cur_house + mid:
             # 하나 설치
             count += 1
@@ -44,4 +43,3 @@ while start <= end :
         end = mid - 1
         
 print(result)
-
