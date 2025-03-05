@@ -30,6 +30,7 @@ def bfs(s):
                 l.remove((nx, ny))
     if len(l) == 0:
         return True
+    
     return False
 
 def dfs(depth):
@@ -41,8 +42,10 @@ def dfs(depth):
     for i in range(depth, 25):
         x, y = idx[i]
         s.append((x,y))
+        n.append(girls[x][y])
         dfs(i+1)
         s.pop()
+        n.pop()
 
 dfs(0)
 print(result)
