@@ -39,5 +39,8 @@ for i in range(M):
                 toggle(num+i)
             else:
                 break
-
-print(*switch[1:])
+            
+for i in range(1, N+1):
+    print(switch[i], end=" ")
+    if i % 20 == 0:
+        print()

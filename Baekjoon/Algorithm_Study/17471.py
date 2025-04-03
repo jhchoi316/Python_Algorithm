@@ -27,7 +27,7 @@ def bfs(area):
         start = area[0]
     else:
         return 0, 0
-    print(area)
+
     queue = deque([start])
     visited = [0] * (N+1)
     visited[start] = 1
