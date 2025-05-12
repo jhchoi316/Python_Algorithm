@@ -3,7 +3,6 @@ read = sys.stdin.readline
 
 triangle = list(map(int, read()))
 
-
 def solution(triangle):
     dp = [[] for _ in range(len(triangle))]
     dp[0].append(triangle[0][0])

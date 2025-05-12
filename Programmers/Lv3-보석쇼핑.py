@@ -1,4 +1,4 @@
-solution(gems):
+def solution(gems):
     answer = [0, len(gems)]
     size = len(set(gems))   # 보석 종류 갯수
     left, right = 0, 0 # left는 보석 빼 줄 포인터, right는 보석 더해 줄 포인터
