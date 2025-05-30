@@ -5,7 +5,7 @@ read = sys.stdin.readline
 
 M, N = map(int, read().split())
 graph = [list(map(int, read().strip().split())) for _ in range(M)]
-dp = [[-1]*N for i in range(M)]
+dp = [[-1]*N for _ in range(M)]
 dx = [0, 1, 0, -1]
 dy = [1, 0 , -1, 0]
 

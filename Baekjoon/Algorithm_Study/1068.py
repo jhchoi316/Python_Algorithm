@@ -4,24 +4,18 @@ read = sys.stdin.readline
 
 N = int(read())
 tree = list(map(int, read().split()))
-graph = [[] for _ in range(N)]
+idx = int(read())
+
+def remove(x, tree):
+    tree[x] = -100
+    for i in range(len(tree)):
+        if tree[i] == x:
+            remove(i, tree)
+
+remove(idx, tree)
+answer = 0
 
 for i in range(len(tree)):
-    if tree[i] == -1:
-        graph[i].append(tree[i])
-    else:
-        graph[i].append(tree[i])
-        
-
-def remove(x, next):
-    if next == -1:
-        return
-    graph.remove(graph[x])
-    for i in range(len(graph)):
-        if graph[i] == x:
-            next = graph[i]
-            graph.remove(graph[i])
-            remove(next)
-
-remove(int(read()), -2)
-print(graph)
+    if tree[i] != -100 and i not in tree:
+        answer += 1
+print(answer)
