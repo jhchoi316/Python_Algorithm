@@ -1,24 +1,34 @@
 import sys
 read = sys.stdin.readline
 
-answer = set()
-N = int(read())
-graph = [[i,int(read())] for i in range(1,N+1)]
-visited = [False] * (N+1)
+# 첫쨰줄: 1~N 차례대로
+# 둘쨰줄: 1~N 정수
 
-def dfs(start):
-    if visited[start][0]
-    dfs(graph[i])
-    
+# 첫쨰줄에서 뽑으면 -> 그 정주들이 이루는 집합 == 둘째줄에 들어 있는 집합
+
+# now: 현재 좌표, start: 시작 좌표
+def dfs(now, start):
+    visited[now] = True
+    # 다음 값
+    next = graph[now]
+
+    # 현재 값을 방문하지 않았다면, dfs
+    if not visited[next]:
+        dfs(next, start)
+    # 현재 값을 방문했고 value랑 start랑
+    elif visited[next] and next == start:
+        answer.append(next)
+        
+N = int(read())
+# 1부터 시작
+graph = [0]+[int(read()) for i in range(N)]
+answer = []
+
 for i in range(1, N+1):
-    if graph[i][0] == graph[i][1]:
-        answer.append(i)
-        visited[i] = True
-    if not visited[i]:
-        visited[i] = True
-        dfs(i)
-        visited[i] = False
+    visited = [False] * (N+1)
+    dfs(i, i)
 
 print(len(answer))
-for i in list(answer).sort():
+
+for i in answer:
     print(i)
