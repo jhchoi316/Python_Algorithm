@@ -15,7 +15,7 @@ def dfs(now, start):
     # 현재 값을 방문하지 않았다면, dfs
     if not visited[next]:
         dfs(next, start)
-    # 현재 값을 방문했고 value랑 start랑
+    # 현재 값을 방문했고, 사이클이 있는지 확인 
     elif visited[next] and next == start:
         answer.append(next)
         
